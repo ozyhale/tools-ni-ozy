@@ -22,11 +22,20 @@
 <script>
 export default {
   data(){
+
+    let menu = [];
+    let i = 0;
+
+    this.$router.options.routes.forEach(route => {
+      let name = route.name === "index" ? "Home" : route.name.charAt(0).toUpperCase() + route.name.slice(1);
+      let order = route.name === "index" ? 0 : ++i;
+      menu.push({name: name, to: route.path, order: order});
+    });
+
+    menu.sort((a,b) => (a.order - b.order));
+
     return {
-      menu: [
-        {"name" : "Home", "to" : "/"},
-        {"name" : "Secrets", "to" : "/secrets"}
-      ]
+      menu: menu
     }
   }
 }
