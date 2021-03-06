@@ -3,8 +3,8 @@ import crypto from 'crypto';
 export default {
 
   encrypt(message, password) {
-    if(this.text == "") throw("Please provide a message to encrypt");
-    if(this.password == "") throw("Please provide a password");
+    if(message == "") throw("Please provide a message to encrypt");
+    if(password == "") throw("Please provide a password");
 
     let key = crypto.createHash("sha256").update(password).digest();
     let iv = crypto.randomBytes(16);
@@ -20,7 +20,7 @@ export default {
   decrypt(decryptedMessage, password) {
     let aText = decryptedMessage.split(":");
     if (aText.length != 2) throw("Invalid encrypted message");
-    if(this.password == "") throw("Please provide a password");
+    if(password == "") throw("Please provide a password");
 
     let key = crypto.createHash("sha256").update(password).digest();
     let iv = Buffer.from(aText[0], 'hex');
