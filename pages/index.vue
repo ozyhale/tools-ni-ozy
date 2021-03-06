@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hi Welcome!
+    Tools ni Ozy
   </div>
 </template>
 

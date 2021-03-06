@@ -9,7 +9,7 @@
           <input id="decrypt" type="radio" name="action" v-model="action" value="decrypt" @change="actionChanged" /> Decrypt
         </label>
       </div>
-      <textarea v-model="text" name="text" class="border-2 p-1 w-full h-56"></textarea>
+      <textarea v-model="text" name="text" class="w-full h-56"></textarea>
       <input v-model="password" type="password" class="border-2 p-1 w-full mb-1" placeholder="Password" />
       <div v-if="action == 'encrypt'">
         <button type="button" class="mt-1" @click="encrypt">Encrypt</button>

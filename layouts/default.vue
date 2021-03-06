@@ -52,8 +52,8 @@ export default {
     @apply text-gray-500;
   }
 
-  textarea, input[type=password] {
-    @apply bg-gray-900 border-gray-900
+  textarea, input[type=password], input[type=text] {
+    @apply border-2 p-1 bg-gray-900 border-gray-900
   }
 
   /* button{
