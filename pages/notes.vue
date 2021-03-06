@@ -7,7 +7,7 @@
       <button class="mb-2">Get</button>
     </div>
     <div>
-      <textarea class="w-full h-64"></textarea>
+      <textarea class="w-full" style="height: 22rem;"></textarea>
     </div>
     <div>
       <button>Save</button>
