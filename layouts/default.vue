@@ -2,12 +2,23 @@
   <div class="p-2">
     <div id="navigation">
 
-      <span v-for="(item, key) in menu" :key="key">
-        <nuxt-link :to="item.to">
-          <span class="link">{{item.name}}</span>
-        </nuxt-link>
-        <span v-if="key < (menu.length-1)">| </span>
-      </span>
+      <div class="flex flex-row">
+        <div>
+          <span v-for="(item, key) in menu" :key="key">
+            <nuxt-link :to="item.to">
+              <span class="link">{{item.name}}</span>
+            </nuxt-link>
+            <span v-if="key < (menu.length-1)">| </span>
+          </span>
+        </div>
+        <div class="flex-grow">
+          <span class="float-right">
+            <nuxt-link to="/login">
+              <span class="link">Login</span>
+            </nuxt-link>
+          </span>
+        </div>
+      </div>
 
     </div>
 
@@ -27,6 +38,7 @@ export default {
     let i = 0;
 
     this.$router.options.routes.forEach(route => {
+      if(route.name == "login") return false;
       let name = route.name === "index" ? "Home" : route.name.charAt(0).toUpperCase() + route.name.slice(1);
       let order = route.name === "index" ? 0 : ++i;
       menu.push({name: name, to: route.path, order: order});
