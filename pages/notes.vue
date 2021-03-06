@@ -16,7 +16,13 @@
 </template>
 
 <script>
-export default {}
+import firebase from '~/plugins/firebase.js';
+
+export default {
+  mounted(){
+    
+  }
+}
 </script>
 
 <style>
