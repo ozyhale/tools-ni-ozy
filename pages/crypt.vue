@@ -12,12 +12,12 @@
       <textarea v-model="text" name="text" class="border-2 p-1 w-full h-56"></textarea>
       <input v-model="password" type="password" class="border-2 p-1 w-full mb-1" placeholder="Password" />
       <div v-if="action == 'encrypt'">
-        <button type="button" @click="encrypt">Encrypt</button>
+        <button type="button" class="mt-1" @click="encrypt">Encrypt</button>
       </div>
       <div v-else>
-        <button type="button" @click="decrypt">Decrypt</button>
+        <button type="button" class="mt-1 bordered" @click="decrypt">Decrypt</button>
       </div>
-      <div class="border-2 p-1 w-full h-56 mt-2 font-mono break-all">{{output}}</div>
+      <div class="border-2 p-1 w-full h-56 mt-2 font-mono break-all bg-gray-900 border-gray-900">{{output}}</div>
     </form>
   </div>
 </template>

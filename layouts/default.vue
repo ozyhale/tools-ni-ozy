@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-2">
     <div id="navigation">
 
       <span v-for="(item, key) in menu" :key="key">
@@ -42,15 +42,42 @@ export default {
 </script>
 
 <style lang="postcss">
-span.link:hover {
-  @apply text-blue-500;
-}
 
-button {
-  @apply bg-transparent text-blue-700 font-semibold py-2 px-4 border border-blue-500 rounded;
-}
+@layer base{
+  body{
+    @apply bg-gray-800 text-gray-300
+  }
 
-button:hover {
-  @apply bg-blue-500 text-white border-transparent;
+  a:hover {
+    @apply text-gray-500;
+  }
+
+  textarea, input[type=password] {
+    @apply bg-gray-900 border-gray-900
+  }
+
+  /* button{
+    @apply text-white text-sm py-2 px-3 rounded-md bg-blue-500
+  }
+
+  button:hover{
+    @apply bg-blue-600 shadow-lg
+  }
+
+  button:focus{
+    @apply outline-none
+  } */
+
+  button{
+    @apply text-white text-sm py-2 px-5 rounded-md border border-gray-500
+  }
+
+  button:focus{
+    @apply outline-none
+  }
+
+  button:hover{
+    @apply bg-gray-700
+  }
 }
 </style>
