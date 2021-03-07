@@ -48,7 +48,8 @@ export default {
           measurementId: process.env.FBASE_MEASUREMENTID
         },
         services: {
-          auth: true // Just as example. Can be any other service.
+          auth: true, // Just as example. Can be any other service.
+          firestore: true
         },
         lazy: false
       }
