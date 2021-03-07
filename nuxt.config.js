@@ -34,6 +34,24 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyAyospSiuv6c4JUhUk5X_2ruz8tqFnCUKE",
+          authDomain: "tools-ni-ozy.firebaseapp.com",
+          projectId: "tools-ni-ozy",
+          storageBucket: "tools-ni-ozy.appspot.com",
+          messagingSenderId: "102100480046",
+          appId: "1:102100480046:web:66b79679548192b47eefbf",
+          measurementId: "G-912JSMBWGF"
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        },
+        lazy: false
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -42,5 +60,10 @@ export default {
 
   server:{
     port: 5001
+  },
+
+  loading: {
+    color: 'white',
+    height: '5px'
   }
 }

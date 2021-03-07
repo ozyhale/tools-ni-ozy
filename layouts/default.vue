@@ -13,9 +13,14 @@
         </div>
         <div class="flex-grow">
           <span class="float-right">
-            <nuxt-link to="/login">
-              <span class="link">Login</span>
-            </nuxt-link>
+            <span v-if="currentUser != null">
+              <a class="link cursor-pointer" @click="logout">Logout</a>
+            </span>
+            <span v-else>
+              <nuxt-link to="/login">
+                <span class="link">Login</span>
+              </nuxt-link>
+            </span>
           </span>
         </div>
       </div>
@@ -31,7 +36,10 @@
 </template>
 
 <script>
+import globalMixin from "~/mixins/global";
+
 export default {
+  mixins: [globalMixin],
   data(){
 
     let menu = [];

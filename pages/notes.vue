@@ -16,11 +16,14 @@
 </template>
 
 <script>
-import firebase from '~/plugins/firebase.js';
 
 export default {
   mounted(){
-    
+    this.$fire.auth.onAuthStateChanged(user => {
+      if(!user){
+        this.$router.push("/login");
+      }
+    });
   }
 }
 </script>

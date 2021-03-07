@@ -1,18 +1,28 @@
 <template>
   <div>
     <form @submit.prevent="login">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button type="submit">Login</button>
+      <input v-model="email" type="text" placeholder="Email">
+      <input v-model="password" type="password" placeholder="Password">
+      <button type="submit" :disabled="process">Login</button>
     </form>
   </div>
 </template>
 
 <script>
+import globalMixin from "~/mixins/global";
+
 export default {
-  methods:{
-    login(){
-      alert("Login");
+  mixins: [globalMixin],
+
+  mounted(){
+    this.logout();
+  },
+
+  data(){
+    return {
+      email : "",
+      password : "",
+      process: false
     }
   }
 }
