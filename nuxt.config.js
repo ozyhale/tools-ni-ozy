@@ -1,3 +1,4 @@
+require('dotenv').config();
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -38,13 +39,13 @@ export default {
       '@nuxtjs/firebase',
       {
         config: {
-          apiKey: "AIzaSyAyospSiuv6c4JUhUk5X_2ruz8tqFnCUKE",
-          authDomain: "tools-ni-ozy.firebaseapp.com",
-          projectId: "tools-ni-ozy",
-          storageBucket: "tools-ni-ozy.appspot.com",
-          messagingSenderId: "102100480046",
-          appId: "1:102100480046:web:66b79679548192b47eefbf",
-          measurementId: "G-912JSMBWGF"
+          apiKey: process.env.FBASE_APIKEY,
+          authDomain: process.env.FBASE_AUTHDOMAIN,
+          projectId: process.env.FBASE_PROJECTID,
+          storageBucket: process.env.FBASE_STORAGEBUCKET,
+          messagingSenderId: process.env.FBASE_MESSAGINGSENDERID,
+          appId: process.env.FBASE_APPID,
+          measurementId: process.env.FBASE_MEASUREMENTID
         },
         services: {
           auth: true // Just as example. Can be any other service.
