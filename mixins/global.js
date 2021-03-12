@@ -12,9 +12,15 @@ export default {
   methods:{
     async login(){
       this.$nuxt.$loading.start();
-      await this.$fire.auth.signInWithEmailAndPassword(this.email, this.password);
+
+      try{
+        await this.$fire.auth.signInWithEmailAndPassword(this.email, this.password);
+        this.$router.push("/");
+      }catch(err){
+        alert(err.message);
+      }
+
       this.$nuxt.$loading.finish();
-      this.$router.push("/");
     },
     async logout(){
       await this.$fire.auth.signOut();
